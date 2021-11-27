@@ -1,4 +1,5 @@
 node_modules
 dist
 public
-tsconfig.build.tsbuildinfo
+./tsconfig.build.tsbuildinfo
+database
