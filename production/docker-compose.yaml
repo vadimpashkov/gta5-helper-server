@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  nginx:
+    build: .
+    ports:
+      - 80:80
+      - 443:443
+    volumes: 
+      - ../:/www
+      - ../config/hosts:/ets/hosts
+    depends_on:
+      - nest
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./database:/var/lib/postgresql/data
+
+  nest:
+    build: ./nest
+    depends_on:
+      - postgres
