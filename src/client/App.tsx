@@ -1,15 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
-import { HelloResponse } from '../common/HelloResponse';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-const App = () => {
-  const [text, setText] = React.useState('');
-  React.useEffect(() => {
-    fetch('/api/hello')
-      .then<HelloResponse>(res => res.json())
-      .then(res => setText(res.text));
-  }, []);
-  return <h1>{text.toString()}</h1>;
-};
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<div>xyuxyuxyu</div>} />
+    </Routes>
+  </BrowserRouter>
+);
 
 render(<App />, document.getElementById('app'));

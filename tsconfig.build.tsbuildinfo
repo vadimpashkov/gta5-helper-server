@@ -186,14 +186,29 @@
         "signature": "9e3199a1f11557e3a2d89230e811bd006c9f42730058c031212b312383c98cea",
         "affectsGlobalScope": true
       },
-      "./src/common/helloresponse.ts": {
-        "version": "7ebcd72f06ceeb1e40e33652854ba5a54ac79bd0f63d91bd7e907152cebd6741",
-        "signature": "1e085b412e746c144fdb274b617b78c749687b8e2dc4ee59921c79bbc1f7d79f",
+      "./node_modules/history/index.d.ts": {
+        "version": "f438d15f5b9657ad0b526ff15b9a3779bd84ec68b8210de9a4cf56c2beb84a9e",
+        "signature": "f438d15f5b9657ad0b526ff15b9a3779bd84ec68b8210de9a4cf56c2beb84a9e",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/react-router-dom/node_modules/react-router/index.d.ts": {
+        "version": "4c9571972ab57c3bc9f59bcde67997bdd32573003077b3d7d3fa0709ecf39973",
+        "signature": "4c9571972ab57c3bc9f59bcde67997bdd32573003077b3d7d3fa0709ecf39973",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/react-router-dom/index.d.ts": {
+        "version": "4bb3779a23f8d2bc00919d8178877be22b79903c71977373802e6514bc3199ee",
+        "signature": "4bb3779a23f8d2bc00919d8178877be22b79903c71977373802e6514bc3199ee",
         "affectsGlobalScope": false
       },
       "./src/client/app.tsx": {
-        "version": "88e75d3d8add354fa0307b331d4120536bad31f864433741126f7fe0dfcb9291",
+        "version": "58d8107169cec9da2f788d3deac3876c803e4489489304b3571ba60aae344e6f",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
+        "affectsGlobalScope": false
+      },
+      "./src/common/helloresponse.ts": {
+        "version": "7ebcd72f06ceeb1e40e33652854ba5a54ac79bd0f63d91bd7e907152cebd6741",
+        "signature": "1e085b412e746c144fdb274b617b78c749687b8e2dc4ee59921c79bbc1f7d79f",
         "affectsGlobalScope": false
       },
       "./node_modules/reflect-metadata/index.d.ts": {
@@ -1907,6 +1922,7 @@
       "declaration": true,
       "removeComments": true,
       "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
       "experimentalDecorators": true,
       "target": 4,
       "sourceMap": true,
@@ -2855,6 +2871,14 @@
       "./node_modules/@types/yargs/index.d.ts": [
         "./node_modules/@types/yargs-parser/index.d.ts"
       ],
+      "./node_modules/react-router-dom/index.d.ts": [
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/react-router-dom/node_modules/react-router/index.d.ts"
+      ],
+      "./node_modules/react-router-dom/node_modules/react-router/index.d.ts": [
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/history/index.d.ts"
+      ],
       "./node_modules/rxjs/index.d.ts": [
         "./node_modules/rxjs/internal/asyncsubject.d.ts",
         "./node_modules/rxjs/internal/behaviorsubject.d.ts",
@@ -3154,7 +3178,7 @@
       ],
       "./src/client/app.tsx": [
         "./node_modules/@types/react/index.d.ts",
-        "./src/common/helloresponse.ts"
+        "./node_modules/react-router-dom/index.d.ts"
       ],
       "./src/server/app.controller.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
@@ -4112,6 +4136,14 @@
       "./node_modules/@types/yargs/index.d.ts": [
         "./node_modules/@types/yargs-parser/index.d.ts"
       ],
+      "./node_modules/react-router-dom/index.d.ts": [
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/react-router-dom/node_modules/react-router/index.d.ts"
+      ],
+      "./node_modules/react-router-dom/node_modules/react-router/index.d.ts": [
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/history/index.d.ts"
+      ],
       "./node_modules/rxjs/index.d.ts": [
         "./node_modules/rxjs/internal/asyncsubject.d.ts",
         "./node_modules/rxjs/internal/behaviorsubject.d.ts",
@@ -4694,6 +4726,9 @@
       "./node_modules/anymatch/index.d.ts",
       "./node_modules/axios/index.d.ts",
       "./node_modules/csstype/index.d.ts",
+      "./node_modules/history/index.d.ts",
+      "./node_modules/react-router-dom/index.d.ts",
+      "./node_modules/react-router-dom/node_modules/react-router/index.d.ts",
       "./node_modules/reflect-metadata/index.d.ts",
       "./node_modules/rxjs/index.d.ts",
       "./node_modules/rxjs/internal/asyncsubject.d.ts",
