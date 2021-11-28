@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "prebuild": "rimraf dist && rimraf tsconfig.build.tsbuildinfo",
-    "build": "nest build",
+    "build": "nest build && rimraf public && webpack",
     "build:client": "rimraf public && webpack --watch",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "nest start",
