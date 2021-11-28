@@ -10,6 +10,7 @@ export const connection: ConnectionOptions = {
   database: 'helper',
   entities: ['dist/server/entities/*.entity.js'],
   migrations: ['dist/server/migrations/*.js'],
+  migrationsRun: true,
   cli: {
     migrationsDir: 'src/server/migrations',
   },
