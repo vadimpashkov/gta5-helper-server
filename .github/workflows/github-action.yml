@@ -12,7 +12,7 @@ jobs:
         node-version: [12.x]
     steps:
       - name: Deploy Node.Js
-        uses: appleboy/ssh-actions@v0.1.2
+        uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{secrets.SSH_HOST}}
           password: ${{secrets.SSH_PASS}}
