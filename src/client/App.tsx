@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<div>some text</div>} />
+      <Route path="/" element={<div>22some text22</div>} />
     </Routes>
   </BrowserRouter>
 );
