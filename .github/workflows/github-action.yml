@@ -20,6 +20,7 @@ jobs:
 
           script: |
             cd gta5-helper-server
+            git pull
             npm ci
             npx webpack
             docker-compose -f docker-compose.production.yaml build
