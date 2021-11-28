@@ -11,6 +11,8 @@ defaults:
 jobs:
   Rebuild:
     runs-on: ubuntu-latest
+    container:
+      options: --user root
     defaults:
       run:
         shell: bash
