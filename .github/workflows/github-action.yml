@@ -11,14 +11,17 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Deploy Node.Js
+        uses: appleboy/ssh-actions@v0.1.2
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm run build
-      - run: rm -rf public
-      - run: npx webpack
-      - run: docker-compose -f docker-compose.production.yaml build
-      - run: docker-compose -f docker-compose.production.yaml down
-      - run: docker-compose -f docker-compose.production.yaml up -d
+          host: ${{secrets.SSH_HOST}}
+          password: ${{secrets.SSH_PASS}}
+          username: ${{secrets.SSH_USER}}
+
+          script: |
+            cd gta5-helper-server
+            npm ci
+            npx webpack
+            docker-compose -f docker-compose.production.yaml build
+            docker-compose -f docker-compose.production.yaml down
+            docker-compose -f docker-compose.production.yaml up -d
