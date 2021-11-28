@@ -17,6 +17,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run build
+      - run: rm -rf public
       - run: npx webpack
       - run: docker-compose -f docker-compose.production.yaml build
       - run: docker-compose -f docker-compose.production.yaml down
