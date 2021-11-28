@@ -8,7 +8,7 @@ jobs:
   Rebuild:
     runs-on: ubuntu-latest
     steps:
-      - run: cd /root/gta5-helper-server
+      - run: sudo cd /root/gta5-helper-server
       - run: npm ci
       - run: npm run build
       - run: docker-compose -f docker-compose.production.yml build
