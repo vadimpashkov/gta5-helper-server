@@ -4,22 +4,16 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   Rebuild:
     runs-on: ubuntu-latest
     steps:
       - run: npm ci
-          shell: bash
-          working-directory: client
       - run: npm run build
-          shell: bash
-          working-directory: client
       - run: docker-compose -f docker-compose.production.yml build
-          shell: bash
-          working-directory: client
       - run: docker-compose -f docker-compose.production.yml down
-          shell: bash
-          working-directory: client
       - run: docker-compose -f docker-compose.production.yml up -d
-          shell: bash
-          working-directory: client
