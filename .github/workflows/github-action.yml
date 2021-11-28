@@ -11,6 +11,11 @@ defaults:
 jobs:
   Rebuild:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: /root/gta5-helper-server
+    permissions: read-all|write-all
     steps:
       - run: npm ci
       - run: npm run build
