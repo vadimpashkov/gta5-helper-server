@@ -18,6 +18,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npx webpack
+      - run: PWD
       - run: docker-compose -f docker-compose.production.yml build
       - run: docker-compose -f docker-compose.production.yml down
       - run: docker-compose -f docker-compose.production.yml up -d
