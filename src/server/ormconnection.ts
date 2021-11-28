@@ -1,7 +1,7 @@
-require('dotenv/config');
+import { ConnectionOptions } from 'typeorm';
 
-module.exports = {
-  name: 'development',
+export const connection: ConnectionOptions = {
+  name: 'default',
   type: 'postgres',
   host: process.env.NODE_ENV === 'production' ? 'postgres' : 'localhost',
   port: 5432,

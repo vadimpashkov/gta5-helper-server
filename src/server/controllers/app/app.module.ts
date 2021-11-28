@@ -6,8 +6,10 @@ import { AppService } from './app.service';
 
 import { UsersModule } from '../users';
 
+import { connection } from '../../ormconnection';
+
 @Module({
-  imports: [TypeOrmModule.forRoot(), UsersModule],
+  imports: [TypeOrmModule.forRoot(connection), UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
