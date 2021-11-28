@@ -1,0 +1,11 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm ci
+      - run: npm run build
+      - run: docker-compose -f docker-compose.production.yml build
+      - run: docker-compose -f docker-compose.production.yml down
+      - run: docker-compose -f docker-compose.production.yml up -d
