@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
-import { User } from '../../entities';
 import { UserWithoutPass } from '../../../common/UserWithoutPass';
 
 @Injectable()
@@ -16,8 +15,6 @@ export class AuthService {
     pass: string,
   ): Promise<UserWithoutPass | null> {
     const user = await this.usersService.findByLogin(username);
-
-    console.log(user);
 
     if (user !== undefined && user.password === pass) {
       const { password, ...result } = user;
