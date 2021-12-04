@@ -1,6 +1,4 @@
-import { ConnectionOptions } from 'typeorm';
-
-export const connection: ConnectionOptions = {
+module.exports = {
   name: 'default',
   type: 'postgres',
   host: process.env.NODE_ENV === 'production' ? 'postgres' : 'localhost',

@@ -14,6 +14,14 @@ export class UsersService {
     return this.usersRepository.find();
   }
 
+  findByLogin(login: string): Promise<User | undefined> {
+    return this.usersRepository.findOne({
+      where: {
+        login,
+      },
+    });
+  }
+
   findOne(id: string): Promise<User> {
     return this.usersRepository.findOne(id);
   }

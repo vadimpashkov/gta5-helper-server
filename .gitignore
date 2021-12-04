@@ -3,3 +3,4 @@ dist
 public
 tsconfig.build.tsbuildinfo
 database
+.env
