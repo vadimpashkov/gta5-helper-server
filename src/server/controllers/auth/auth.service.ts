@@ -17,6 +17,8 @@ export class AuthService {
   ): Promise<UserWithoutPass | null> {
     const user = await this.usersService.findByLogin(username);
 
+    console.log(user);
+
     if (user !== undefined && user.password === pass) {
       const { password, ...result } = user;
       return result;
