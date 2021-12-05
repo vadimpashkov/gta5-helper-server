@@ -6,9 +6,10 @@ import { AppService } from './app.service';
 
 import { UsersModule } from '../users';
 import { AuthModule } from '../auth';
+import { FishModule } from '../fish';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), UsersModule, AuthModule],
+  imports: [TypeOrmModule.forRoot(), UsersModule, AuthModule, FishModule],
   controllers: [AppController],
   providers: [AppService],
 })
