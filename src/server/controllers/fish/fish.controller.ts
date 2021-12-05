@@ -2,7 +2,6 @@ import { Body, Controller, Post, UseGuards, Get } from '@nestjs/common';
 import { FishService } from './fish.service';
 import { JwtAuthGuard } from '../auth';
 import { User } from '../../common';
-import { UserWithoutPass } from '../../../common/UserWithoutPass';
 
 @Controller('api/fish')
 export class FishController {
@@ -17,8 +16,6 @@ export class FishController {
   @UseGuards(JwtAuthGuard)
   @Get()
   getFish(@User() user: { userId: number }) {
-    console.log(user);
-
     return this.fishService.getFish(user.userId);
   }
 }

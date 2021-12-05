@@ -32,8 +32,6 @@ export class FishService {
       },
     });
 
-    if (user === null) return;
-
     await this.foundFishRepository.insert({
       catchDate: new Date(),
       user,

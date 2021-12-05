@@ -17,4 +17,19 @@ export class User {
     foundFish => foundFish.user,
   )
   foundFish: FoundFish[];
+
+  @Column({ default: 62 })
+  openInventoryKey: number;
+
+  @Column({ default: 61 })
+  openTrunkKey: number;
+
+  @Column({ default: false })
+  lookingForBackpack: boolean;
+
+  @Column({ default: false })
+  lookingForBoat: boolean;
+
+  @Column({ default: 1 })
+  fishingRodKey: number;
 }

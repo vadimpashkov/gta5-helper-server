@@ -22,11 +22,32 @@ export class UsersService {
     });
   }
 
-  findOne(id: string): Promise<User> {
+  findOne(id: number): Promise<User> {
     return this.usersRepository.findOne(id);
   }
 
   async remove(id: string): Promise<void> {
     await this.usersRepository.delete(id);
+  }
+
+  async getSettings(id: number) {
+    const user = await this.findOne(id);
+
+    return {
+      openInventoryKey: user.openInventoryKey,
+      openTrunkKey: user.openTrunkKey,
+      lookingForBackpack: user.lookingForBackpack,
+      lookingForBoat: user.lookingForBoat,
+      fishingRodKey: user.fishingRodKey,
+    };
+  }
+
+  async setSettings(id: number, settings: any) {
+    await this.usersRepository.update(
+      {
+        id,
+      },
+      settings,
+    );
   }
 }
