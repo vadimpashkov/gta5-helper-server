@@ -2,19 +2,22 @@ import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { FoundFish } from './foundFish.entity';
 
 @Entity()
-export class User {
+export class AvailableFish {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  login: string;
+  name: string;
 
   @Column()
-  password: string;
+  maxPrice: number;
+
+  @Column('decimal', { precision: 8, scale: 2 })
+  weight: number;
 
   @OneToMany(
     () => FoundFish,
-    foundFish => foundFish.user,
+    foundFish => foundFish.fish,
   )
-  foundFish: FoundFish[];
+  found: FoundFish[];
 }

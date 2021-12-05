@@ -1,1 +1,1 @@
-export type UserWithoutPass = { id: number; login: string; isActive: boolean };
+export type UserWithoutPass = { id: number; login: string };
