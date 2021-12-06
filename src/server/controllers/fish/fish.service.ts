@@ -40,15 +40,13 @@ export class FishService {
   }
 
   async getFish(userId: number) {
-    const found = await this.foundFishRepository.find({
-      where: {
-        user: {
-          id: userId,
-        },
-      },
-      relations: ['fish'],
-    });
+    const ff: {
+      name: string;
+      count: number;
+    }[] = await this.foundFishRepository.query(
+      `SELECT Fish.name, COUNT(Found.id) FROM "available_fish" AS Fish LEFT JOIN "found_fish" AS Found ON Fish.id = Found."fishId" AND Found."userId" = ${userId} GROUP BY Fish.name`,
+    );
 
-    return found;
+    return ff;
   }
 }
