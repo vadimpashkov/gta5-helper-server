@@ -32,4 +32,7 @@ export class User {
 
   @Column({ default: 1 })
   fishingRodKey: number;
+
+  @Column({ default: '[]' })
+  macroses: string;
 }

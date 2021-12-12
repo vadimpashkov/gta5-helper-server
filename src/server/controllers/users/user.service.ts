@@ -39,6 +39,7 @@ export class UsersService {
       lookingForBackpack: user.lookingForBackpack,
       lookingForBoat: user.lookingForBoat,
       fishingRodKey: user.fishingRodKey,
+      macroses: user.macroses,
     };
   }
 
