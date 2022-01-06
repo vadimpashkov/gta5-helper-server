@@ -1,12 +1,14 @@
-import { Client, Intents, Collection } from 'discord.js';
+import { Client, Intents, Collection, Message } from 'discord.js';
 
 import * as events from './events';
 
 const client = new Client({
-	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_VOICE_STATES],
+	intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_VOICE_STATES],
 });
 
-(events as any).forEach(event => {
+Object.keys(events).forEach(key => {
+	const event = events[key];
+
 	if (event.once) {
 		client.once(event.name, (...args) => event.execute(client, ...args));
 	} else {

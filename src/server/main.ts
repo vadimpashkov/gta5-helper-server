@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { config } from 'dotenv';
 import { AppModule } from './controllers';
 
+import { startEmsBot } from '../emsBot';
+
 config();
 
 async function bootstrap() {
@@ -10,3 +12,4 @@ async function bootstrap() {
 }
 
 bootstrap();
+startEmsBot();
